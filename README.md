@@ -146,3 +146,47 @@ type FooKeys = keyof Foo;
 ```typescript
 type FooKeys = "foo" | "bar";
 ```
+
+## スプレッド演算子
+
+スプレッド演算子は、配列やオブジェクトを展開するために使用する。
+
+### 配列の展開
+
+```typescript
+const foo = [1, 2, 3];
+const bar = [...foo, 4, 5, 6];
+```
+
+### オブジェクトの展開
+
+```typescript
+const foo = { foo: 1, bar: 2 };
+const bar = { ...foo, baz: 3 };
+```
+
+## rest parameters
+
+rest parameters は、関数の引数に、可変長の引数を受け取ることができる。
+
+```typescript
+const foo = (...args: number[]) => {
+  console.log(args);
+};
+
+foo(1, 2, 3, 4, 5);
+```
+
+## optional chaining
+
+optional chaining は、オブジェクトのプロパティが存在するかどうかを確認しながら、プロパティにアクセスすることができる。
+
+```typescript
+const foo = {
+  bar: {
+    baz: 1,
+  },
+};
+
+console.log(foo.bar?.baz);
+```
