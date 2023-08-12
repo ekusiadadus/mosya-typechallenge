@@ -190,3 +190,29 @@ const foo = {
 
 console.log(foo.bar?.baz);
 ```
+
+## index access type
+
+index access type は、オブジェクトのプロパティにアクセスするために使用する。
+
+```typescript
+const foo = {
+  bar: 1,
+  baz: 2,
+};
+
+type FooBar = (typeof foo)["bar"];
+```
+
+## keyof typeof
+
+keyof typeof は、オブジェクトのプロパティ名を取得するために使用する。
+
+```typescript
+const foo = {
+  bar: 1,
+  baz: 2,
+};
+
+type FooKeys = keyof typeof foo;
+```
